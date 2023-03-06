@@ -1,7 +1,7 @@
 # Starve_free_reader-writer_problem
 Assumptions:Semaphores uses a FIFO queue to maintain the list of blocked processes.
 Creating the FIFO queue to maintain the list of blocked processes:
-
+``` cpp
 struct Semaphore{
   int value=1;
   FIFO_Queue* K=new FIFO_Queue();
@@ -48,6 +48,7 @@ struct FIFO_Queue{
         else{
             rear->next=b;rear=b;}
                         }}
+                        ```
     
 Creating the semaphores:
 
