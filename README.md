@@ -50,15 +50,16 @@ struct FIFO_Queue{
                         }}
 ```                           
 Creating the semaphores:
-
+``` cpp
 int reader_count=0;       //Integer representing the number of reader executing critical section.
 Semaphore turn=new Semaphore();        /*seamphore representing the order in which the writer and 
                                          reader are requesting the access to critical section.*/
 Semaphore cs=new Semaphore();        //seamphore required to access the critical section.
 Semaphore mutex=new Semaphore();       //seamphore required to change the reader_count variable.
 
-
+```
 Reader's Code:
+``` cpp
 do{
                   /*  ENTRY SECTION   */
 
@@ -81,9 +82,10 @@ do{
                       
 }while(true);
 
-
+```
 
 Writer's code:
+``` cpp
 do{
                   /*  ENTRY SECTION  */
 
@@ -97,3 +99,4 @@ do{
       signal(cs);                         //releasing access to critical section for next reader or writer
 
 }while(true);
+```
