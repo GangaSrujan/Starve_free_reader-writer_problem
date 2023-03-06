@@ -48,8 +48,7 @@ struct FIFO_Queue{
         else{
             rear->next=b;rear=b;}
                         }}
-                        ```
-    
+```                           
 Creating the semaphores:
 
 int reader_count=0;       //Integer representing the number of reader executing critical section.
